@@ -1,0 +1,100 @@
+<aura:component controller="ApplicantProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="objApplicant" type="Application__c" default="{'sobjectType' :'Application__c'}"  />
+ 
+    <aura:attribute name="showCreateFieldFlag" type="Boolean" default="false"  />
+    <aura:attribute name="showsearchFieldFlag" type="Boolean" default="false"  />
+    <aura:attribute name="showEditFieldFlag" type="Boolean" default="false"  />
+    
+    <aura:attribute name="DisableCreateButton" type="Boolean" default="false"  />
+    <aura:attribute name="DisableSearchButton" type="Boolean" default="false"  />
+    <aura:attribute name="DisableEditButton" type="Boolean" default="true"  />
+    <aura:attribute name="DisableUpdateButton" type="Boolean" default="true"  />
+ 	<aura:attribute name="DisableDeleteButton" type="Boolean" default="true"  />
+ 
+    <lightning:card title="CURD Method on Record Applicant">
+            <lightning:button variant="brand"
+                        label="Create"
+                        iconName="utility:record_create"
+                        title="Create"
+                        onclick="{!c.createNewApplicantController}"
+                        disabled="{!v.DisableCreateButton}"
+                        />
+            <lightning:button variant="brand"
+                        label="Search"
+                        iconName="utility:search"
+                        title="Search"
+                        onclick="{!c.searchApplicantController}"
+                        disabled="{!v.DisableSearchButton}"
+                        />
+            <lightning:button variant="brand"
+                        label="Edit"
+                        iconName="utility:edit"
+                        title="Edit"
+                        onclick="{!c.editApplicantController}"
+                        disabled="{!v.DisableEditButton}"
+                        />
+            <lightning:button variant="brand"
+                            label="Delete"
+                            iconName="utility:delete"
+                            title="Delete"
+                            onclick="{!c.deleteApplicantController}"
+                            disabled="{!v.DisableDeleteButton}"
+                            />
+        <aura:if isTrue="{!v.showCreateFieldFlag}">
+                
+            <lightning:input type="text"
+                             label="Applicant_Name"
+                             name="Applicant_Name"
+                             value="{!v.objApplicant.First_Name__c}"
+                             />
+                <br />
+            <lightning:input type="text"
+                            label="Last_Name"
+                            name="Last_Name"
+                            value="{!v.objApplicant.Last_Name__c}"
+                            />
+                <br />
+            <lightning:input type="text"
+                            label="Gender"
+                            name="Gender"
+                            value="{!v.objApplicant.Gender__c}"                
+                            />
+                <br />
+            <lightning:input type="text"
+                            label="Age"
+                            name="Age"
+                            value="{!v.objApplicant.Age__c}"
+                            />
+                <br />
+           <lightning:button variant="brand"
+                            label="Save"
+                            iconName="utility:save"
+                            title="Save"
+                            onclick="{!c.SaveApplicantController}"
+                            />  
+            
+       </aura:if>
+       <aura:if isTrue="{!v.showsearchFieldFlag}">
+            <lightning:input type="text"
+                            label="Applicant Id"
+                            name="Applicant Id"
+                            value="{!v.objApplicant.Name}"
+                            />
+        
+            <lightning:button variant="brand"
+                            label="Check"
+                            iconName="utility:search"
+                            title="Check"
+                            onclick="{!c.CheckApplicantController}"
+                            />  
+            <br />
+           First Name=<ui:outputText value="{!v.objApplicant.First_Name__c}"/><br />  
+           Last Name=<ui:outputText value="{!v.objApplicant.Last_Name__c}"/><br />
+           Gender=<ui:outputText value="{!v.objApplicant.Gender__c}"/><br />
+           Age=<ui:outputText value="{!v.objApplicant.Age__c}"/><br />
+           
+        </aura:if>   
+      
+        
+        </lightning:card>
+</aura:component>

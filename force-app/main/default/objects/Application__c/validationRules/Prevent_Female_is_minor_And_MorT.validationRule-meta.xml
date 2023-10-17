@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Female_is_minor_And_MorT</fullName>
+    <active>false</active>
+    <description>applicant is Female is less than 18 and male / TransGender is less than 25 .</description>
+    <errorConditionFormula>OR( 
+AND( Age__c &lt;18, ISPICKVAL( Gender__c , &apos;Female&apos;))
+, AND( OR( ISPICKVAL( Gender__c , &apos;Male&apos;) , ISPICKVAL(Gender__c , &apos;Transgender&apos;) ) , Age__c &lt;25)  )</errorConditionFormula>
+    <errorMessage>minor is not allows</errorMessage>
+</ValidationRule>

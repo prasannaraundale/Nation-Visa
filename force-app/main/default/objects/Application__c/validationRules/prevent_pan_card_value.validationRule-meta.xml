@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prevent_pan_card_value</fullName>
+    <active>false</active>
+    <description>pan card not blank value.</description>
+    <errorConditionFormula>ISBLANK( PAN_Card__c )</errorConditionFormula>
+    <errorDisplayField>PAN_Card__c</errorDisplayField>
+    <errorMessage>pan card can not blank.</errorMessage>
+</ValidationRule>

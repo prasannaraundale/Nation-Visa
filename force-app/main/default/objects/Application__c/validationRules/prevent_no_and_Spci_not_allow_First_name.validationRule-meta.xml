@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prevent_no_and_Spci_not_allow_First_name</fullName>
+    <active>false</active>
+    <description>number and Special symbols not allow in first name Field</description>
+    <errorConditionFormula>NOT(REGEX( First_Name__c ,&quot;^[a-zA-Z]*$&quot;))</errorConditionFormula>
+    <errorDisplayField>First_Name__c</errorDisplayField>
+    <errorMessage>not allow to special symbols and number</errorMessage>
+</ValidationRule>

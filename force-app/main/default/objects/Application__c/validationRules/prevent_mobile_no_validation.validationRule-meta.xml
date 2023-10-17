@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prevent_mobile_no_validation</fullName>
+    <active>false</active>
+    <description>not allow to alphabeted and special character.</description>
+    <errorConditionFormula>NOT(REGEX(  Mobile_Number__c , &quot;(\\d){10}&quot;))</errorConditionFormula>
+    <errorDisplayField>Mobile_Number__c</errorDisplayField>
+    <errorMessage>only allow to number.</errorMessage>
+</ValidationRule>

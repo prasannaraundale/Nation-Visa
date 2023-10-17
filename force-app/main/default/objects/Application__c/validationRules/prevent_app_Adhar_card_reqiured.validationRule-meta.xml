@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prevent_app_Adhar_card_reqiured</fullName>
+    <active>false</active>
+    <description>applicant is required aadhar card.</description>
+    <errorConditionFormula>NOT( INCLUDES ( Required_Document_List__c , &apos;aaDhar Card&apos;))</errorConditionFormula>
+    <errorDisplayField>Required_Document_List__c</errorDisplayField>
+    <errorMessage>Aadhar card is Required</errorMessage>
+</ValidationRule>

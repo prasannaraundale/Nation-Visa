@@ -1,0 +1,25 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="showMessageFlag" 
+                    type="Boolean"
+                    default="false" />
+    <aura:attribute name="disableShowButton"
+                    type="Boolean"
+                    default="false" />
+    <aura:attribute name="disableHideButton"
+                    type="Boolean"
+                    default="true" />
+    <lightning:card title="Show hide component">
+     <lightning:button variant="brand" 
+                       label="Show"
+                       onclick="{!c.ShowMessageController}"
+                       disabled="{!v.disableShowButton}"/>
+    <lightning:button variant="brand"
+                      label="Hide"
+                      onclick="{!c.HideMessageController}"
+                      disabled="{!v.disableHideButton}" />
+        
+       <aura:if isTrue="{!v.showMessageFlag}">
+           <br /> <ui:outputText value ="Name : balaji airway is good facility provide.."/>
+        </aura:if> 
+    </lightning:card>
+</aura:component>

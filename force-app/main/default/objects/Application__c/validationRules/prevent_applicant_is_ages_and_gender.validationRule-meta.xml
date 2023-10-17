@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prevent_applicant_is_ages_and_gender</fullName>
+    <active>false</active>
+    <description>prevent applicant is age minor and gender is mala</description>
+    <errorConditionFormula>AND(Age__c &lt;18, ISPICKVAL( Gender__c , &apos;Male&apos;))</errorConditionFormula>
+    <errorDisplayField>Gender__c</errorDisplayField>
+    <errorMessage>invalid data. please check the DOB and Gender</errorMessage>
+</ValidationRule>
