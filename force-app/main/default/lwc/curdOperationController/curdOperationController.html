@@ -1,0 +1,29 @@
+<template>
+   <lightning-card title="Account Curd oeration">
+   
+    <lightning-button variant="brand" icon-name="utility:save" label="create" onclick={createAccountHandler}></lightning-button> &nbsp;
+    
+    <lightning-button variant="brand" icon-name="utility:search" label="search" onclick={searchAccountHandler}></lightning-button> &nbsp;
+    
+    <lightning-button variant="brand" icon-name="utility:edit" label="update" onclick={updateAccountHandler}></lightning-button>&nbsp;
+    
+    <lightning-button variant="brand" icon-name="utility:delete" label="delete" onclick={deleteAccountHandler}></lightning-button><br/>
+
+    <lightning-input  data-formfield="accountName" placeholder="Enter Account Name" type="text" label="Enter Account Name" required="true" name="accountName"> </lightning-input> <br />
+    <br />
+    <lightning-input  data-formfield="accountType"  placeholder="Enter type" type="text" label="Enter Account Type" name="accountType"> </lightning-input><br/>
+    <br /> 
+    <lightning-input  data-formfield="accountRating"  type="text" placeholder="Enter Rating" label="Enter Account Rating" name="accountRating"> </lightning-input> <br />
+    <br />
+    <lightning-input  data-formfield="accountSLA"  type="text" placeholder="Enter SLA" label="Enter  Account SLA" name="accountSLA"> </lightning-input><br/>
+    <br />
+    Account Details..<br/>
+
+    Account Name=<br/>
+    Account Type=<br/>
+    Account Rating=<br/>
+    Account SLA=<br/>
+
+
+   </lightning-card>
+</template>

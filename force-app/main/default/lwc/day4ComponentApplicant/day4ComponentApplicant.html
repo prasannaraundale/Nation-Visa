@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Applicant Record create">
+        <lightning-input  data-formfield="applicantFirstName"  type="text" label="Enter First Name" name="firstName"> </lightning-input> <br />
+        <br />
+        <lightning-input  data-formfield="applicantLastName"  type="text" label="Enter Last Name" name="lastName"> </lightning-input><br/>
+        <br />
+
+        <lightning-combobox
+        name="gender"
+        label="Enter Gender"
+        
+        placeholder="Select Gender"
+        options={options}
+        onchange={handleGender} ></lightning-combobox>
+        <br/>
+        <lightning-button variant="brand" label="Save" onclick={createNewApplicantHandler}></lightning-button>
+</lightning-card>
+</template>
